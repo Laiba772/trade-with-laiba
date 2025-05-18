@@ -86,7 +86,7 @@ def create_stripe_checkout_session(user_email):
                 'product_data': {
                     'name': 'Trade with Laiba Premium',
                 },
-                'unit_amount': 500,  # $5.00 in cents
+                'unit_amount': 500,
             },
             'quantity': 1,
         }],
@@ -181,6 +181,18 @@ USERS = load_users()
 st.set_page_config(page_title="Trade with Laiba", layout="centered", page_icon="📊")
 st.title("📊 Trade with Laiba")
 
+query_params = st.query_params
+status = query_params.get("status")
+
+if status == "success" and "user" in st.session_state:
+    username = st.session_state.user.username
+    if check_payment_and_unlock(username):
+        st.success("🎉 Payment successful! Premium features unlocked.")
+    else:
+        st.warning("Payment not verified yet. Please try again or contact support.")
+elif status == "cancel":
+    st.warning("❌ Payment was cancelled.")
+
 username = st.text_input("Enter your username")
 password = st.text_input("Enter password", type="password")
 email = st.text_input("Enter your email (for notifications)")
@@ -221,7 +233,7 @@ if "user" in st.session_state:
         if user.premium_unlocked:
             st.success("✅ Premium Features Unlocked")
         else:
-            st.warning("🔒 Premium Features Locked")
+            st.warning("🔐 Premium Features Locked")
 
     st.markdown("---")
 
@@ -278,6 +290,5 @@ if "user" in st.session_state:
                 st.warning("No payment found yet. Please complete payment on Stripe.")
     else:
         st.info("✅ Already Premium.")
-
 else:
     st.info("👆 Please log in to access your dashboard.")
