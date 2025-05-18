@@ -84,19 +84,20 @@ def create_stripe_checkout_session(user_email):
             'price_data': {
                 'currency': 'usd',
                 'product_data': {
-                    'name': 'Trade with Laiba Premium V2',  # change this to anything new
+                    'name': 'Trade with Laiba Premium',
                 },
-                'unit_amount': 500,  # $5.00 in cents
+                'unit_amount': 500,
             },
             'quantity': 1,
         }],
         mode='payment',
-        success_url="https://trade-with-laiba.streamlit.app/?status=success",
-        cancel_url="https://trade-with-laiba.streamlit.app/?status=cancel",
+        success_url="https://trade-with-laiba.streamlit.app/?status=success",  # ✅ REAL URL
+        cancel_url="https://trade-with-laiba.streamlit.app/?status=cancel",    # ✅ REAL URL
         customer_email=user_email,
         metadata={'username': st.session_state.user.username},
     )
     return session.url
+
 
 
 def check_payment_and_unlock(username):
