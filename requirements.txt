@@ -4,6 +4,7 @@ pandas
 requests
 bcrypt
 python-dotenv
+stripe
 
 
 
