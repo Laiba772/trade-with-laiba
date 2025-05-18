@@ -91,8 +91,8 @@ def create_stripe_checkout_session(user_email):
             'quantity': 1,
         }],
         mode='payment',
-        success_url="https://yourdomain.com/success?session_id={CHECKOUT_SESSION_ID}",
-        cancel_url="https://yourdomain.com/cancel",
+        success_url="https://trade-with-laiba.streamlit.app/?status=success",
+        cancel_url="https://trade-with-laiba.streamlit.app/?status=cancel",
         customer_email=user_email,
         metadata={'username': st.session_state.user.username},
     )
