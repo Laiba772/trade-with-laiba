@@ -84,9 +84,9 @@ def create_stripe_checkout_session(user_email):
             'price_data': {
                 'currency': 'usd',
                 'product_data': {
-                    'name': 'Trade with Laiba Premium',
+                    'name': 'Trade with Laiba Premium V2',  # change this to anything new
                 },
-                'unit_amount': 500,
+                'unit_amount': 500,  # $5.00 in cents
             },
             'quantity': 1,
         }],
@@ -97,6 +97,7 @@ def create_stripe_checkout_session(user_email):
         metadata={'username': st.session_state.user.username},
     )
     return session.url
+
 
 def check_payment_and_unlock(username):
     try:
