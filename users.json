@@ -1,0 +1,42 @@
+{
+  "laiba naz": {
+    "account_type": "demo",
+    "balance": 10000,
+    "trades": [],
+    "history": [],
+    "hashed_password": null,
+    "premium_unlocked": false
+  },
+  "Aqsa": {
+    "account_type": "demo",
+    "balance": 10000,
+    "trades": [],
+    "history": [],
+    "hashed_password": "$2b$12$fM2x7yzW5tix.ifFZfcmruPQcLQIHBquC.bjLdyMXpKwmGnvlNOBK",
+    "premium_unlocked": false
+  },
+  "Saba": {
+    "account_type": "demo",
+    "balance": 10000,
+    "trades": [],
+    "history": [],
+    "hashed_password": "$2b$12$UThe7i7WV527mwFlvY62Qewmp/kIq7Ewu6us46BmxtA04.1BpVG72",
+    "premium_unlocked": false
+  },
+  "Aaila": {
+    "account_type": "demo",
+    "balance": 10000,
+    "trades": [],
+    "history": [],
+    "hashed_password": "$2b$12$GFxIr.XTrVLW5gxiSg.nkuiXgdbum4GcioTeOKFNJypyTVBPUZysu",
+    "premium_unlocked": false
+  },
+  "laiba": {
+    "account_type": "real",
+    "balance": 0,
+    "trades": [],
+    "history": [],
+    "hashed_password": "$2b$12$KlfYUKf2dxPJqRGkeaOUDO7raZDjDYLapSfetgu/corkT3nOF8YOa",
+    "premium_unlocked": false
+  }
+}
